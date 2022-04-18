@@ -1,0 +1,1 @@
+"manifest-version: 1.0  name: UTM_package  version: 2022-04-18T16:19:27.707Z  provider: Netcracker  system: UTM"
