@@ -1,0 +1,64 @@
+{
+  "name" : "test 5",
+  "description" : "",
+  "type" : "Regular",
+  "templateBranchId" : "0aec81c7-802c-1077-8180-2cc2db1a0005",
+  "expectedDuration" : "86400",
+  "formioInputParameters" : [ ],
+  "formioOutputParameters" : [ ],
+  "jeopardyConfiguration" : {
+    "id" : "0aec81c7-802c-1077-8180-2cc2db1b0006",
+    "handlingAction" : "Notification",
+    "jeopardyLevels" : [ {
+      "id" : "0aec81c7-802c-1077-8180-2cc2db1b0007",
+      "name" : "Overdue",
+      "metric" : "Planned Due Date",
+      "threshold" : 0,
+      "timing" : "after",
+      "notification" : "Planned Due Date of the task is expired. Please, check the task."
+    }, {
+      "id" : "0aec81c7-802c-1077-8180-2cc2db1c0008",
+      "name" : "In Jeopardy",
+      "metric" : "Planned Start Date",
+      "threshold" : 3600,
+      "timing" : "after",
+      "notification" : "Planned Start Date is reached, but task state is still \"Not Started\". Please, check the task, Jeopardy State is changed to In Jeopardy."
+    }, {
+      "id" : "0aec81c7-802c-1077-8180-2cc2db1d0009",
+      "name" : "Normal",
+      "metric" : null,
+      "threshold" : 0,
+      "timing" : null,
+      "notification" : null
+    } ],
+    "recipients" : null
+  },
+  "scheduledTasksView" : false,
+  "sourceSystem" : "UTM",
+  "creationDate" : "2022-04-18T15:10:32.844Z",
+  "version" : "1.0.0",
+  "versionState" : "Active",
+  "assignment" : {
+    "id" : "0aec81c7-802c-1077-8180-2cc2db0f0004",
+    "name" : "test 5",
+    "assignee" : {
+      "correlationKey" : "Management"
+    },
+    "expressions" : null
+  },
+  "actions" : [ {
+    "id" : "0aec81c7-802c-1077-8180-2cc2daee0000",
+    "name" : "Pause"
+  }, {
+    "id" : "0aec81c7-802c-1077-8180-2cc2dafe0001",
+    "name" : "Complete"
+  }, {
+    "id" : "0aec81c7-802c-1077-8180-2cc2db000002",
+    "name" : "Fail"
+  }, {
+    "id" : "0aec81c7-802c-1077-8180-2cc2db000003",
+    "name" : "Start"
+  } ],
+  "characteristics" : [ ],
+  "utmTaskTemplateId" : "0aec81c7-802c-1077-8180-2cc2db1a0005"
+}
