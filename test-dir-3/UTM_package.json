@@ -1,0 +1,305 @@
+{
+  "name" : "UTM_package.2022-04-19T09:39:44.956Z.zip",
+  "importedBy" : null,
+  "manifest" : "manifest-version: 1.0  name: UTM_package  version: 2022-04-19T09:39:44.956Z  provider: Netcracker  system: UTM",
+  "packageBody" : {
+    "taskTemplates" : [ {
+      "name" : "test 5",
+      "description" : "",
+      "type" : "Regular",
+      "templateBranchId" : "0aec81c7-802c-1077-8180-2cc2db1a0005",
+      "expectedDuration" : "86400",
+      "formioInputParameters" : [ ],
+      "formioOutputParameters" : [ ],
+      "jeopardyConfiguration" : {
+        "id" : "0aec81c7-802c-1077-8180-2cc2db1b0006",
+        "handlingAction" : "Notification",
+        "jeopardyLevels" : [ {
+          "id" : "0aec81c7-802c-1077-8180-2cc2db1b0007",
+          "name" : "Overdue",
+          "metric" : "Planned Due Date",
+          "threshold" : 0,
+          "timing" : "after",
+          "notification" : "Planned Due Date of the task is expired. Please, check the task."
+        }, {
+          "id" : "0aec81c7-802c-1077-8180-2cc2db1c0008",
+          "name" : "In Jeopardy",
+          "metric" : "Planned Start Date",
+          "threshold" : 3600,
+          "timing" : "after",
+          "notification" : "Planned Start Date is reached, but task state is still \"Not Started\". Please, check the task, Jeopardy State is changed to In Jeopardy."
+        }, {
+          "id" : "0aec81c7-802c-1077-8180-2cc2db1d0009",
+          "name" : "Normal",
+          "metric" : null,
+          "threshold" : 0,
+          "timing" : null,
+          "notification" : null
+        } ],
+        "recipients" : null
+      },
+      "scheduledTasksView" : false,
+      "sourceSystem" : "UTM",
+      "creationDate" : "2022-04-18T15:10:32.844Z",
+      "version" : "1.0.0",
+      "versionState" : "Active",
+      "assignment" : {
+        "id" : "0aec81c7-802c-1077-8180-2cc2db0f0004"
+      },
+      "actions" : [ {
+        "id" : "0aec81c7-802c-1077-8180-2cc2daee0000",
+        "name" : "Pause"
+      }, {
+        "id" : "0aec81c7-802c-1077-8180-2cc2dafe0001",
+        "name" : "Complete"
+      }, {
+        "id" : "0aec81c7-802c-1077-8180-2cc2db000002",
+        "name" : "Fail"
+      }, {
+        "id" : "0aec81c7-802c-1077-8180-2cc2db000003",
+        "name" : "Start"
+      } ],
+      "characteristics" : [ ],
+      "utmTaskTemplateId" : "0aec81c7-802c-1077-8180-2cc2db1a0005"
+    }, {
+      "name" : "test 6",
+      "description" : "",
+      "type" : "Regular",
+      "templateBranchId" : "0aec81c7-802c-18ea-8180-2cc9e7670005",
+      "expectedDuration" : "86400",
+      "formioInputParameters" : [ ],
+      "formioOutputParameters" : [ ],
+      "jeopardyConfiguration" : {
+        "id" : "0aec81c7-802d-169a-8180-2d61971a0002",
+        "handlingAction" : "Notification",
+        "jeopardyLevels" : [ {
+          "id" : "0aec81c7-802d-169a-8180-2d61971b0003",
+          "name" : "Overdue",
+          "metric" : "Planned Due Date",
+          "threshold" : 0,
+          "timing" : "after",
+          "notification" : "Planned Due Date of the task is expired. Please, check the task."
+        }, {
+          "id" : "0aec81c7-802d-169a-8180-2d61971c0004",
+          "name" : "In Jeopardy",
+          "metric" : "Planned Start Date",
+          "threshold" : 3600,
+          "timing" : "after",
+          "notification" : "Planned Start Date is reached, but task state is still \"Not Started\". Please, check the task, Jeopardy State is changed to In Jeopardy."
+        }, {
+          "id" : "0aec81c7-802d-169a-8180-2d61971c0005",
+          "name" : "Normal",
+          "metric" : null,
+          "threshold" : 0,
+          "timing" : null,
+          "notification" : null
+        } ],
+        "recipients" : null
+      },
+      "scheduledTasksView" : false,
+      "sourceSystem" : "UTM",
+      "creationDate" : "2022-04-18T15:10:32.924Z",
+      "version" : "1.0.1",
+      "versionState" : "Active",
+      "assignment" : {
+        "id" : "0aec81c7-802d-169a-8180-2d6196fc0000"
+      },
+      "actions" : [ {
+        "id" : "0aec81c7-802c-18ea-8180-2cc9e7460000",
+        "name" : "Pause"
+      }, {
+        "id" : "0aec81c7-802c-18ea-8180-2cc9e7500001",
+        "name" : "Complete"
+      }, {
+        "id" : "0aec81c7-802c-18ea-8180-2cc9e7510002",
+        "name" : "Fail"
+      }, {
+        "id" : "0aec81c7-802c-18ea-8180-2cc9e7530003",
+        "name" : "Start"
+      } ],
+      "characteristics" : [ ],
+      "utmTaskTemplateId" : "0aec81c7-802d-169a-8180-2d6197170001"
+    } ],
+    "actions" : [ {
+      "id" : "de50a1c5-efe0-4192-8514-d68876d5c280",
+      "name" : "Pause",
+      "description" : "Default UTM task pause action",
+      "action" : "this.utm.utils.taskService.pauseTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "36b9a0c5-d1fd-42df-8a72-a27c1e31b4b0",
+      "name" : "Complete",
+      "description" : "Default UTM task complete action",
+      "action" : "this.utm.utils.taskService.saveOutputParameters(\"COMPLETE\").then(() => this.utm.utils.taskService.completeTask(\"\", \"\"));",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "a05d0c02-68c0-4565-9ff0-0952fa676a27",
+      "name" : "Initialize",
+      "description" : "Default UTM task initialize action",
+      "action" : "this.utm.utils.taskService.startTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return (taskStatus === \"Not Ready\");",
+      "theme" : "primary",
+      "disabled" : false,
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "c6089e71-0366-450d-a6e8-914b7836a84b",
+      "name" : "Fail",
+      "description" : "Default UTM task fail action",
+      "action" : "this.utm.utils.taskService.failTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "04360635-037a-4ff4-a472-e43b49b16287",
+      "name" : "Start",
+      "description" : "Default UTM task start action",
+      "action" : "this.utm.utils.taskService.startTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return (taskStatus === \"Not Started\" || taskStatus === \"Paused\" || taskStatus === \"Reopened\");",
+      "theme" : "primary",
+      "disabled" : false,
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-1077-8180-2cc2daee0000",
+      "name" : "Pause",
+      "description" : "Default UTM task pause action",
+      "action" : "this.utm.utils.taskService.pauseTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "de50a1c5-efe0-4192-8514-d68876d5c280",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-1077-8180-2cc2dafe0001",
+      "name" : "Complete",
+      "description" : "Default UTM task complete action",
+      "action" : "this.utm.utils.taskService.saveOutputParameters(\"COMPLETE\").then(() => this.utm.utils.taskService.completeTask(\"\", \"\"));",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "36b9a0c5-d1fd-42df-8a72-a27c1e31b4b0",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-1077-8180-2cc2db000002",
+      "name" : "Fail",
+      "description" : "Default UTM task fail action",
+      "action" : "this.utm.utils.taskService.failTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "c6089e71-0366-450d-a6e8-914b7836a84b",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-1077-8180-2cc2db000003",
+      "name" : "Start",
+      "description" : "Default UTM task start action",
+      "action" : "this.utm.utils.taskService.startTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return (taskStatus === \"Not Started\" || taskStatus === \"Paused\" || taskStatus === \"Reopened\");",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "04360635-037a-4ff4-a472-e43b49b16287",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-18ea-8180-2cc9e7460000",
+      "name" : "Pause",
+      "description" : "Default UTM task pause action",
+      "action" : "this.utm.utils.taskService.pauseTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "de50a1c5-efe0-4192-8514-d68876d5c280",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-18ea-8180-2cc9e7500001",
+      "name" : "Complete",
+      "description" : "Default UTM task complete action",
+      "action" : "this.utm.utils.taskService.saveOutputParameters(\"COMPLETE\").then(() => this.utm.utils.taskService.completeTask(\"\", \"\"));",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "36b9a0c5-d1fd-42df-8a72-a27c1e31b4b0",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-18ea-8180-2cc9e7510002",
+      "name" : "Fail",
+      "description" : "Default UTM task fail action",
+      "action" : "this.utm.utils.taskService.failTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return taskStatus === \"In Progress\";",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "c6089e71-0366-450d-a6e8-914b7836a84b",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    }, {
+      "id" : "0aec81c7-802c-18ea-8180-2cc9e7530003",
+      "name" : "Start",
+      "description" : "Default UTM task start action",
+      "action" : "this.utm.utils.taskService.startTask();",
+      "actionType" : "javascript",
+      "condition" : "const taskStatus = this.utm.task.state; return (taskStatus === \"Not Started\" || taskStatus === \"Paused\" || taskStatus === \"Reopened\");",
+      "theme" : "primary",
+      "disabled" : false,
+      "catalogActionId" : "04360635-037a-4ff4-a472-e43b49b16287",
+      "postActions" : [ ],
+      "system" : true,
+      "isSystem" : true
+    } ],
+    "assignmentRules" : [ {
+      "id" : "0aec81c7-802c-1077-8180-2cc2db0f0004",
+      "name" : "test 5",
+      "assignee" : {
+        "correlationKey" : "Management"
+      },
+      "expressions" : null
+    }, {
+      "id" : "0aec81c7-802d-169a-8180-2d6196fc0000",
+      "name" : "test 6",
+      "assignee" : {
+        "correlationKey" : "Test Group"
+      },
+      "expressions" : null
+    } ]
+  },
+  "exportType" : null
+}
